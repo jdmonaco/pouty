@@ -1,18 +1,15 @@
-> **Note: `roto` has not yet been refactored as an independent package. You should have no expectation that it will run or import correctly in its current state.**
->
-> **I hope to ameliorate this as soon as I have time; of course, PRs welcome.**
+# pouty
 
-<p>&nbsp;</p>
-
-# roto
-
-The `roto` package is a collection of tools for supporting a wide range of scientific computing approaches. Its functions are organized loosely into topic/domain-based modules that should be largely self-evident from how they are named. This package represents the cumulative state of the tools that I have found necessary (or convenient) to build myself over many years. It may or may not be useful to anyone else, but it does serve as a dependency for several of my other packages including [`spikemaps`](https://github.com/jdmonaco/spikemaps) and [`skaggs`](https://github.com/jdmonaco/skaggs).
+The `pouty` package is a collection of tools for enabling fast and flexible messaging and logging. The main `pouty.ConsolePrinter` class makes it easy to print colorful info/warning/error/debug messages with automatic prefixes, indenting, and format-string interpolation of arguments. Message output can be directed to logfiles, system/desktop notifications, or a menubar widget (see below).
 
 ## Dependencies
 
 *Note: This section will be updated as the packaging and dependencies are fixed.*
 
-The `roto` package requires a typical scientific python computing environment, which can be set up using Anaconda or similar distributions (see the `requirements.txt`). 
+My [`roto`](https://github.com/jdmonaco/roto) package is a required dependency. There are also two optional dependencies, if you want to use them:
+
+1. [tonsky/AnyBar](https://github.com/tonsky/AnyBar): The `pouty.anybar` module communicates color updates to the AnyBar menubar widget in macOS, which you can coordinate with state changes in your program, etc.
+1. [julianXX/terminal-notifier](https://github.com/julienXX/terminal-notifier): Setting `popup=True` on output calls will also attempt to emit a desktop notification. If `terminal-notifier` is on your path, then it will be called instead of the default, which is to use an AppleScript (`osascript`) notification.
 
 ## Todo
 
