@@ -7,7 +7,7 @@ import sys
 import socket
 import subprocess
 
-from.shell import Shell
+from .shell import Shell
 from . import debug
 
 
